@@ -23,9 +23,9 @@ class LISPValidatorTest {
 
         try {
             LISPValidator lispValidator = new LISPValidator();
-            assertTrue(lispValidator.validateLISPFile(""));
+            assertFalse(lispValidator.validateLISPFile(""));
         } catch ( IOException ioe ) {
-            System.out.println (ioe.toString());
+            System.out.println(ioe.toString());
         }
     }
 
@@ -40,10 +40,10 @@ class LISPValidatorTest {
             String lispCode = ")(a + b)(";
 
             if ( createLispFile(lispFilePath, lispCode) ) {
-                assertTrue(lispValidator.validateLISPFile(lispFilePath));
+                assertFalse(lispValidator.validateLISPFile(lispFilePath));
             }
         } catch ( IOException ioe ) {
-            System.out.println (ioe.toString());
+            System.out.println(ioe.toString());
         }
     }
 
@@ -58,10 +58,10 @@ class LISPValidatorTest {
             String lispCode = "((a + b) ; comment";
 
             if ( createLispFile(lispFilePath, lispCode) ) {
-                assertTrue(lispValidator.validateLISPFile(lispFilePath));
+                assertFalse(lispValidator.validateLISPFile(lispFilePath));
             }
         } catch ( IOException ioe ) {
-            System.out.println (ioe.toString());
+            System.out.println(ioe.toString());
         }
     }
 
@@ -79,7 +79,7 @@ class LISPValidatorTest {
                 assertTrue(lispValidator.validateLISPFile(lispFilePath));
             }
         } catch ( IOException ioe ) {
-            System.out.println (ioe.toString());
+            System.out.println(ioe.toString());
         }
     }
 
@@ -97,7 +97,7 @@ class LISPValidatorTest {
                 assertTrue(lispValidator.validateLISPFile(lispFilePath));
             }
         } catch ( IOException ioe ) {
-            System.out.println (ioe.toString());
+            System.out.println(ioe.toString());
         }
     }
 
